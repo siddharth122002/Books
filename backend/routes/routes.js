@@ -2,6 +2,11 @@ const Book = require('../models/Book')
 const express = require('express');
 const router = express.Router();
 
+app.get('/test2',(req,res)=>{
+    res.send("routes Working");
+})
+
+
 // create new book
 router.post('/', async (req, res) => {
   console.log(req.body)

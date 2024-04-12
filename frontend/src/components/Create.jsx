@@ -20,7 +20,7 @@ const Create = () => {
       year,
     };
     setLoading(true);
-      axios.post('http://localhost:3000/books', data)
+      axios.post('https://books-backend-nine.vercel.app/books', data)
         .then(() => {
           console.log("ok");
           setLoading(false);

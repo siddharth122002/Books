@@ -16,7 +16,7 @@ const Edit = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios.get(`http://localhost:3000/books/${id}`)
+    axios.get(`https://books-backend-nine.vercel.app/books/${id}`)
     .then((response) => {
         setAuthor(response.data.author);
         setYear(response.data.year)

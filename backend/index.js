@@ -22,6 +22,9 @@ const fn=async()=>{
 }
 fn();
 
+app.get('/',(req,res)=>{
+    res.send("go to /books");
+})
 app.use('/books', router);
 
 app.listen(process.env.PORT,()=>{

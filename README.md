@@ -1,0 +1,1 @@
+applications demonstrates CRUD

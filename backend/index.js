@@ -22,7 +22,13 @@ const fn=async()=>{
 }
 fn();
 
+app.get('/test',(req,res)=>{
+    res.send("index Working");
+})
+
 app.use('/books', router);
+
+
 
 app.listen(3000,()=>{
     console.log("listening");

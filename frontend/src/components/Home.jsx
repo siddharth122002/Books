@@ -13,7 +13,6 @@ const Home = () => {
     setLoading(true);
       axios.get('https://books-backend-nine.vercel.app/books')
       .then((response) => {
-        console.log(response)
         setBooks(response.data.data);
         setLoading(false);
       })
@@ -23,13 +22,11 @@ const Home = () => {
   }, []);
 
   return (
-    <div className='p-4'>
-      <div className='flex justify-center items-center gap-x-4'>
-      </div>
-      <div className='flex justify-between items-center'>
-        <h1 className='text-3xl my-8'>Books List</h1>
-        <Link to='/books/create'>
-          <MdOutlineAddBox className='text-sky-800 text-4xl' />
+    <div className="container mx-auto px-4">
+      <div className="flex justify-between items-center">
+        <h1 className="text-4xl my-8 font-serif">List of Books</h1>
+        <Link to="/books/create" className="text-sky-800 text-4xl ">
+          <MdOutlineAddBox />
         </Link>
       </div>
       {loading ? (
@@ -39,6 +36,7 @@ const Home = () => {
       )}
     </div>
   );
+  
 };
 
 export default Home;

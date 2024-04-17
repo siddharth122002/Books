@@ -5,6 +5,9 @@ const bookSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    image:{
+      type:String,
+    },
     author: {
       type: String,
       required: true,
@@ -13,6 +16,12 @@ const bookSchema = mongoose.Schema(
       type: Number,
       required: true,
     },
+    summary:{
+      type:String,
+    },
+    genre:{
+      type:String,
+    }
   },
   {
     timestamps: true,

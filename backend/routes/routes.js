@@ -2,15 +2,17 @@ const Book = require('../models/Book')
 const express = require('express');
 const router = express.Router();
 
-
 // create new book
 router.post('/', async (req, res) => {
   console.log(req.body)
   try {
     const newBook = {
       title: req.body.title,
+      image: req.body.image,
       author: req.body.author,
       year: req.body.year,
+      summary:req.body.summary,
+      genre:req.body.genre,
     };
     const book = await Book.create(newBook);
     return res.status(201).send(book);
@@ -36,7 +38,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Route for Get One Book from database by id
+// Get One Book 
 router.get('/:id', async (req, res) => {
   console.log("inside")
   try {
@@ -52,15 +54,6 @@ router.get('/:id', async (req, res) => {
 // Route for Update a Book
 router.put('/:id', async (req, res) => {
   try {
-    if (
-      !req.body.title ||
-      !req.body.author ||
-      !req.body.year
-    ) {
-      return res.status(400).send({
-        message: 'Send all required fields: title, author, year',
-      });
-    }
 
     const { id } = req.params;
 
